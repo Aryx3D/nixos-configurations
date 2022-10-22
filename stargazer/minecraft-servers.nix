@@ -98,6 +98,22 @@ in {
           white-list = true;
         };
       };
+      aryxcreate = {
+        inherit rsyncSSHKeys jvmOpts;
+        enable = true;
+        jvmMaxAllocation = "18G";
+        jvmInitialAllocation = "6G";
+        serverConfig = defaults // {
+          server-port = 25574;
+          motd = "Aryx CreateSMP Madness";
+          spawn-protection = 64;
+          level-seed = "7658422966196024";
+          level-type = "amplified";
+
+          # Gonna handle this manually cause the discord bot is STILL broken kekw
+          white-list = true;
+        };
+      };      
     };
   };
 }
